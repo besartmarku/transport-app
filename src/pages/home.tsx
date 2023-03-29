@@ -48,6 +48,7 @@ function Home() {
             <button
               onClick={() => dispatch({ type: 'add-destination' })}
               className="mt-2 font-medium text-purple-dark"
+              data-testid="add-destination"
             >
               Add destination
             </button>

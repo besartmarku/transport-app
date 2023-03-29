@@ -6,7 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test:e2e": "start-server-and-test serve http://127.0.0.1:3000/ 'cypress open'",
+    "test:e2e:ci": "start-server-and-test serve http://127.0.0.1:3000/ 'cypress run'",
+    "test:unit": "jest --watch",
+    "test:unit:ci": "jest",
+    "test:unit:coverage": "jest --silent --watchAll=false --coverage"
   },
   "dependencies": {
     "@formkit/auto-animate": "^1.0.0-beta.6",
@@ -33,7 +38,17 @@
     "zod": "^3.21.4"
   },
   "devDependencies": {
+    "jest": "^28.1.1",
+    "jest-environment-jsdom": "^28.1.1",
+    "ts-jest": "^28.0.5",
+    "@cypress/vite-dev-server": "^3.0.0",
+    "cypress": "^10.2.0",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.2.1",
+    "@types/testing-library__user-event": "^4.2.0",
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
+    "eslint-plugin-testing-library": "^5.5.1",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@typescript-eslint/eslint-plugin": "^5.57.0",
